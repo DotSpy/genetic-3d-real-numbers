@@ -69,7 +69,7 @@ class FunctionView : View() {
                                 uiData.generationPoints.forEach { (x, y) ->
                                     chromosomeData.add(XYChart.Data(x, y))
                                     val z = Plot.getZValue(x, y)
-                                    if (z > currentSolution) {
+                                    if (z < currentSolution) {
                                         currentSolution = z
                                     }
                                 }
