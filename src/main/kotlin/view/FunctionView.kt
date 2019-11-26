@@ -46,9 +46,11 @@ class FunctionView : View() {
                 series("Genetic", chromosomeData)
                 for (rastringLevel in 10..60 step 10) {
                     series("RL$rastringLevel") {
-                        val points = Plot.rastringLevels.getValue(rastringLevel)
-                        points.forEach { point ->
-                            data(point.x, point.y)
+                        val points = Plot.rastringLevels.getValue(rastringLevel).toList()
+                        var i = 0
+                        while(i < points.size){
+                            data(points[i].x, points[i].y)
+                            i+=3
                         }
                     }
                 }
